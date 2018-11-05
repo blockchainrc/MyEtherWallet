@@ -48,3 +48,17 @@ MyEtherWallet is a doorway to the Ethereum blockchain, allowing users to manage 
 ## Bug / Feature Request
 
 If you find a bug, or want a new feature added, please submit it on the [Github Issues](https://github.com/MyEtherWallet/MyEtherWallet/issues)
+
+
+1.easily
+2.wait
+3.carry
+4.alone
+5.mobile
+6.letter
+7.purity
+8.secret
+9.joke
+10.appear
+11.river
+12.end

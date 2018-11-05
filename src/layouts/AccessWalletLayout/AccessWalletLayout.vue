@@ -1,33 +1,40 @@
 <template>
   <div>
     <access-my-wallet-container/>
-    <price-bar 
+    <!-- <price-bar 
       :v-if="$store.state.online && tokens.length > 1" 
-      :tokens="tokens"/>
-    <faqs/>
+      :tokens="tokens"/> -->
+    <!-- <faqs/> -->
+
+    <!-- <mnemonic-modal
+      ref="mnemonicPhraseModal"
+      :mnemonic-phrase-password-modal-open="mnemonicphrasePasswordModalOpen"/> -->
   </div>
 </template>
 
 <script>
 import AccessMyWalletContainer from './containers/AccessMyWalletContainer';
-import FaqsContainer from '@/containers/FaqsContainer';
-import PriceBar from './components/PriceBar';
+// import FaqsContainer from '@/containers/FaqsContainer';
+// import PriceBar from './components/PriceBar';
+import MnemonicModal from './components/MnemonicModal';
 
 export default {
   name: 'AccessWalletLayout',
   components: {
     'access-my-wallet-container': AccessMyWalletContainer,
-    faqs: FaqsContainer,
-    'price-bar': PriceBar
+    // faqs: FaqsContainer,
+    // 'price-bar': PriceBar,
+    'mnemonic-modal': MnemonicModal,
   },
   data() {
     return {
-      tokens: []
+      tokens: [],
+      phrase: ''
     };
   },
   async mounted() {
     if (this.$store.state.online) {
-      this.tokens = await this.getRates();
+      // this.tokens = await this.getRates();
     }
   },
   methods: {
@@ -48,8 +55,15 @@ export default {
           if (a.rank > b.rank) return 1;
           return 0;
         });
-    }
-  }
+    },
+
+    // mnemonicphrasePasswordModalOpen(phrase) {
+    //   this.phrase = phrase;
+    //   // this.$refs.mnemonicPhraseModal.$refs.mnemonicPhrase.hide();
+    //   // this.$refs.mnemonicPhrasePassword.$refs.password.show();
+    // },
+  },
+  
 };
 </script>
 

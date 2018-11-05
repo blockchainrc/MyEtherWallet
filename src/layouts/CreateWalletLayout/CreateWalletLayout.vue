@@ -1,8 +1,9 @@
 <template>
   <div class="your-password">
-    <tutorial-modal
+    <!-- <tutorial-modal
       ref="tutorialModal"
-      :skip="skip"/>
+      :skip="skip"/> -->
+    <!-- <access-my-wallet-container/> -->
     <scan-to-download-modal ref="scanToDownloadModal"/>
 
     <by-json-page-title/>
@@ -12,8 +13,8 @@
           v-show="!byJson && !byMnemonic"
           class="nav-tab-user-input-box">
           <b-tabs class="x100">
-            <div class="progress-bar"/>
-            <b-tab
+            <!-- <div class="progress-bar"/> -->
+            <!-- <b-tab
               class="mew-connect-block"
               title="MEWconnect"
               active>
@@ -38,8 +39,8 @@
                 <img src="@/assets/images/etc/phones.png">
               </div>
 
-            </b-tab>
-            <b-tab title="By JSON File">
+            </b-tab> -->
+            <!-- <b-tab title="By JSON File">
 
               <div class="title-block">
                 <div class="title-popover">
@@ -53,21 +54,22 @@
                 :switcher="switcher"
                 :param="'Json'"/>
               <create-wallet-input-footer/>
-            </b-tab>
+            </b-tab> -->
             <b-tab title="By Mnemonic Phrase">
 
               <div class="title-block">
                 <div class="title-popover">
                   <h3>{{ $t("createWallet.yourPw") }}</h3>
-                  <popover :popcontent="$t('popover.whatIsMessageContent')"/>
+                  <!-- <popover :popcontent="$t('popover.whatIsMessageContent')"/> -->
                 </div>
               </div>
 
               <create-wallet-input
                 v-model="password"
                 :switcher="switcher"
-                :param="'Mnemonic'"/>
-              <create-wallet-input-footer/>
+                :param="'Mnemonic'"
+              />
+              <!-- <create-wallet-input-footer/> -->
             </b-tab>
           </b-tabs>
         </div>
@@ -86,23 +88,27 @@
 <script>
 import ByJsonFileContainer from './containers/ByJsonFileContainer';
 import ByMnemonicContainer from './containers/ByMnemonicContainer';
-import TutorialModal from './components/TutorialModal';
+// import TutorialModal from './components/TutorialModal';
 import ScanToDownloadModal from './components/ScanToDownloadModal';
 import CreateWalletInput from './components/CreateWalletInput';
 import CreateWalletInputFooter from './components/CreateWalletInputFooter';
 import PageFooter from './components/PageFooter';
 import PageTitle from './components/PageTitle';
 
+import AccessMyWalletContainer from '../AccessWalletLayout/containers/AccessMyWalletContainer';
+
 export default {
   components: {
     'by-json-file-container': ByJsonFileContainer,
     'by-mnemonic-container': ByMnemonicContainer,
-    'tutorial-modal': TutorialModal,
+    // 'tutorial-modal': TutorialModal,
     'scan-to-download-modal': ScanToDownloadModal,
     'by-json-page-title': PageTitle,
     'create-wallet-input': CreateWalletInput,
     'create-wallet-input-footer': CreateWalletInputFooter,
-    'by-json-page-footer': PageFooter
+    'by-json-page-footer': PageFooter,
+
+    'access-my-wallet-container': AccessMyWalletContainer,
   },
   data() {
     return {
@@ -118,7 +124,7 @@ export default {
       skipTutorial === null ||
       skipTutorial === false
     ) {
-      this.$children[0].$refs.tutorial.show();
+      // this.$children[0].$refs.tutorial.show();
     }
   },
   methods: {
@@ -136,7 +142,7 @@ export default {
     },
     skip() {
       localStorage.setItem('skipTutorial', true);
-      this.$refs.tutorialModal.$refs.tutorial.hide();
+      // this.$refs.tutorialModal.$refs.tutorial.hide();
     },
     scanToDownloadModalOpen() {
       this.$refs.scanToDownloadModal.$refs.scantodownload.show();

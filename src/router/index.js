@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HomeLayout from '@/layouts/HomeLayout';
+// import HomeLayout from '@/layouts/HomeLayout';
 import CreateWalletLayout from '@/layouts/CreateWalletLayout';
 import ConvertUnits from '@/layouts/ConvertUnits';
 import TeamLayout from '@/layouts/TeamLayout';
@@ -27,13 +27,14 @@ import dapps from '@/dapps/routes';
 Vue.use(Router);
 
 const router = [
+  // {
+  //   path: '/Home',
+  //   name: 'Home',
+  //   component: HomeLayout
+  // },
   {
+    // path: '/create-wallet',
     path: '/',
-    name: 'Home',
-    component: HomeLayout
-  },
-  {
-    path: '/create-wallet',
     name: 'CreateWalletLayout',
     component: CreateWalletLayout
   },
@@ -127,7 +128,8 @@ const router = [
         component: VerifyMessageContainer
       }
     ]
-  }
+  },
+  // {path: '/', redirect: '/create-wallet'}
 ];
 
 Object.keys(dapps).forEach(dapp => {

@@ -5,10 +5,12 @@
     hide-footer
     class="bootstrap-modal modal-metamask"
     centered>
+<!-- <div class="bootstrap-modal modal-metamask"> -->
 
-    <div class="contents">
+
+    <div class="contents ">
       <p class="instruction">{{ $t("accessWallet.pleaseTypeInMnemonicPhrase") }}</p>
-      <div class="tools">
+      <!-- <div class="tools">
         <div class="value-switch noselect">
           <div class="sliding-switch">
             <label class="switch">
@@ -25,7 +27,7 @@
           <span class="text__base link switch-label">{{ $t("createWallet.byMnemonicValue") }}</span>
         </div>
 
-      </div>
+      </div> -->
       <div class="phrases">
         <ul>
           <li
@@ -47,7 +49,8 @@
         {{ $t("common.continue") }}
       </b-btn>
     </div>
-    <customer-support/>
+    <!-- <customer-support/> -->
+  <!-- </div> -->
   </b-modal>
 </template>
 
@@ -96,4 +99,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import 'MnemonicModal.scss';
+.bootstrap-modal{
+  // padding: 50px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.phrase{
+  padding: 50px;
+  max-width: 800px;
+}
 </style>

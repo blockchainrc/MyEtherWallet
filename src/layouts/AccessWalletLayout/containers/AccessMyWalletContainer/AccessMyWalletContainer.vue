@@ -45,7 +45,7 @@
       :hardware-wallet-open="hardwareWalletOpen"
       :phrase="phrase"/>
 
-    <div class="wrap">
+    <!-- <div class="wrap">
       <div class="page-container">
         <div class="title">
           <h2>{{ $t('common.accessMyWallet') }}</h2>
@@ -72,7 +72,7 @@
           />
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
 </template>
@@ -160,6 +160,9 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    this.mnemonicphraseModalOpen();
   },
   methods: {
     mewConnectModalOpen() {

@@ -14,11 +14,12 @@
               active>
               <div class="title-popover">
                 <h3>{{ $t("createWallet.byMnemonicWriteDown") }}</h3>
-                <popover :popcontent="$t('popover.whatIsMessageContent')" />
+                <!-- <popover :popcontent="$t('popover.whatIsMessageContent')" /> -->
               </div>
               <div class="contents">
                 <div class="tools">
-                  <div class="value-switch noselect">
+                  <!-- 位数 -->
+                  <!-- <div class="value-switch noselect">
                     <div class="sliding-switch">
                       <label class="switch">
                         <input type="checkbox" >
@@ -32,16 +33,17 @@
                       </div>
                     </div>
                     <span class="text__base link switch-label">{{ $t("createWallet.byMnemonicValue") }}</span>
-                  </div>
+                  </div> -->
 
-                  <div
+                  <!-- 刷新 -->
+                  <!-- <div
                     class="random-button color-green noselect"
                     @click="mnemonicValueRefresh">
                     <i
                       class="fa fa-refresh"
                       aria-hidden="true"/>
                     <span>{{ $t("createWallet.byMnemonicRandom") }}</span>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="phrases">
                   <ul>
@@ -59,13 +61,13 @@
                   @click="mnemonicVerificationModalOpen">
                   {{ $t("createWallet.byMnemonicAlreadyWritten") }}
                 </div>
-                <router-link to="/">
+                <!-- <router-link to="/">
                   <img
                     class="icon"
                     src="~@/assets/images/icons/printer.svg">
-                </router-link>
+                </router-link> -->
               </div>
-              <input-footer />
+              <!-- <input-footer /> -->
             </b-tab>
           </b-tabs>
         </div>

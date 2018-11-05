@@ -69,6 +69,8 @@ const setState = function({ commit }, stateObj) {
 
 const setWeb3Instance = function({ dispatch, commit, state }, provider) {
   if (provider && provider.currentProvider) {
+    console.log(provider.currentProvider);
+    
     commit(
       'SET_WEB3_INSTANCE',
       override(
@@ -80,6 +82,10 @@ const setWeb3Instance = function({ dispatch, commit, state }, provider) {
     );
   } else {
     const hostUrl = url.parse(state.network.url);
+    console.log(`${hostUrl.protocol}//${hostUrl.host}:${state.network.port}${
+      hostUrl.pathname
+    }`);
+    
     const web3Instance = new web3(
       `${hostUrl.protocol}//${hostUrl.host}:${state.network.port}${
         hostUrl.pathname
